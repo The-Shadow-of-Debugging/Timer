@@ -1,0 +1,220 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("OpenSans"),
+  url(~static/fonts/OpenSans/OpenSans-regular.eot?#iefix) format("embedded-opentype"),
+  url(~static/fonts/OpenSans/OpenSans-regular.woff2) format("woff2"),
+  url(~static/fonts/OpenSans/OpenSans-regular.woff) format("woff"),
+  url(~static/fonts/OpenSans/OpenSans-regular.ttf) format("truetype"),
+  url(~static/fonts/OpenSans/OpenSans-regular.svg#OpenSans) format("svg")
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("OpenSans"),
+  url(~static/fonts/OpenSans/OpenSans-300.eot?#iefix) format("embedded-opentype"),
+  url(~static/fonts/OpenSans/OpenSans-300.woff2) format("woff2"),
+  url(~static/fonts/OpenSans/OpenSans-300.woff) format("woff"),
+  url(~static/fonts/OpenSans/OpenSans-300.ttf) format("truetype"),
+  url(~static/fonts/OpenSans/OpenSans-300.svg#OpenSans) format("svg")
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("OpenSans"),
+  url(~static/fonts/OpenSans/OpenSans-600.eot?#iefix) format("embedded-opentype"),
+  url(~static/fonts/OpenSans/OpenSans-600.woff2) format("woff2"),
+  url(~static/fonts/OpenSans/OpenSans-600.woff) format("woff"),
+  url(~static/fonts/OpenSans/OpenSans-600.ttf) format("truetype"),
+  url(~static/fonts/OpenSans/OpenSans-600.svg#OpenSans) format("svg")
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("OpenSans"),
+  url(~static/fonts/OpenSans/OpenSans-700.eot?#iefix) format("embedded-opentype"),
+  url(~static/fonts/OpenSans/OpenSans-700.woff2) format("woff2"),
+  url(~static/fonts/OpenSans/OpenSans-700.woff) format("woff"),
+  url(~static/fonts/OpenSans/OpenSans-700.ttf) format("truetype"),
+  url(~static/fonts/OpenSans/OpenSans-700.svg#OpenSans) format("svg")
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local("OpenSans"),
+  url(~static/fonts/OpenSans/OpenSans-800.eot?#iefix) format("embedded-opentype"),
+  url(~static/fonts/OpenSans/OpenSans-800.woff2) format("woff2"),
+  url(~static/fonts/OpenSans/OpenSans-800.woff) format("woff"),
+  url(~static/fonts/OpenSans/OpenSans-800.ttf) format("truetype"),
+  url(~static/fonts/OpenSans/OpenSans-800.svg#OpenSans) format("svg")
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local("OpenSans"),
+  url(~static/fonts/OpenSans/OpenSans-italic.eot?#iefix) format("embedded-opentype"),
+  url(~static/fonts/OpenSans/OpenSans-italic.woff2) format("woff2"),
+  url(~static/fonts/OpenSans/OpenSans-italic.woff) format("woff"),
+  url(~static/fonts/OpenSans/OpenSans-italic.ttf) format("truetype"),
+  url(~static/fonts/OpenSans/OpenSans-italic.svg#OpenSans) format("svg")
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: local("OpenSans"),
+  url(~static/fonts/OpenSans/OpenSans-300-italic.eot?#iefix) format("embedded-opentype"),
+  url(~static/fonts/OpenSans/OpenSans-300-italic.woff2) format("woff2"),
+  url(~static/fonts/OpenSans/OpenSans-300-italic.woff) format("woff"),
+  url(~static/fonts/OpenSans/OpenSans-300-italic.ttf) format("truetype"),
+  url(~static/fonts/OpenSans/OpenSans-300-italic.svg#OpenSans) format("svg")
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: local("OpenSans"),
+  url(~static/fonts/OpenSans/OpenSans-600-italic.eot?#iefix) format("embedded-opentype"),
+  url(~static/fonts/OpenSans/OpenSans-600-italic.woff2) format("woff2"),
+  url(~static/fonts/OpenSans/OpenSans-600-italic.woff) format("woff"),
+  url(~static/fonts/OpenSans/OpenSans-600-italic.ttf) format("truetype"),
+  url(~static/fonts/OpenSans/OpenSans-600-italic.svg#OpenSans) format("svg")
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: local("OpenSans"),
+  url(~static/fonts/OpenSans/OpenSans-700-italic.eot?#iefix) format("embedded-opentype"),
+  url(~static/fonts/OpenSans/OpenSans-700-italic.woff2) format("woff2"),
+  url(~static/fonts/OpenSans/OpenSans-700-italic.woff) format("woff"),
+  url(~static/fonts/OpenSans/OpenSans-700-italic.ttf) format("truetype"),
+  url(~static/fonts/OpenSans/OpenSans-700-italic.svg#OpenSans) format("svg")
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: local("OpenSans"),
+  url(~static/fonts/OpenSans/OpenSans-800-italic.eot?#iefix) format("embedded-opentype"),
+  url(~static/fonts/OpenSans/OpenSans-800-italic.woff2) format("woff2"),
+  url(~static/fonts/OpenSans/OpenSans-800-italic.woff) format("woff"),
+  url(~static/fonts/OpenSans/OpenSans-800-italic.ttf) format("truetype"),
+  url(~static/fonts/OpenSans/OpenSans-800-italic.svg#OpenSans) format("svg")
+}
+
+
+@font-face {
+  font-family: 'Mr Eaves Modern';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Mr Eaves"),
+  url(~static/fonts/MrEavesModern/MrEavesModern-Regular.woff2) format("woff2"),
+  url(~static/fonts/MrEavesModern/MrEavesModern-Regular.woff) format("woff")
+}
+
+@font-face {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("KumbhSans"),
+  url(~static/fonts/KumbhSans/KumbhSans-Regular.ttf) format("truetype")
+}
+
+@font-face {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("KumbhSans"),
+  url(~static/fonts/KumbhSans/KumbhSans-Light.ttf) format("truetype")
+}
+
+
+@font-face {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("KumbhSans"),
+  url(~static/fonts/KumbhSans/KumbhSans-Bold.ttf) format("truetype")
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("DMSans"),
+  url(~static/fonts/DMSans/DMSans-Regular.ttf) format("truetype")
+}
+
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("DMSans"),
+  url(~static/fonts/DMSans/DMSans-Medium.ttf) format("truetype")
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("DMSans"),
+  url(~static/fonts/DMSans/DMSans-Bold.ttf) format("truetype")
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local("DMSans"),
+  url(~static/fonts/DMSans/DMSans-Italic.ttf) format("truetype")
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: local("DMSans"),
+  url(~static/fonts/DMSans/DMSans-MediumItalic.ttf) format("truetype")
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: local("DMSans"),
+  url(~static/fonts/DMSans/DMSans-BoldItalic.ttf) format("truetype")
+}

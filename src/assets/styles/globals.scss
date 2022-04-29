@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'variables';
+
+@import
+  'common/fonts',
+  'common/transitions'
+;
+
+@import
+  'layout/_base',
+  'layout/_page'
+;
+
+@import
+  'typography/_fonts',
+  'typography/_base'
+;
+
+@import
+  'components/_tooltip',
+  'components/_cropper',
+  'components/_popover-white',
+  'components/_tooltip-white',
+  'components/_modal',
+  'components/_table',
+  'components/_pagination',
+  'components/_search-card',
+  'components/_skeleton'
+;
+
+ol {
+  list-style: none;
+  counter-reset: counter;
+}
+ol li {
+  counter-increment: counter;
+}
+ol li::marker {
+  content: counter(counter) '. ';
+  font-weight: bold;
+}
+
+p.is-editor-empty:first-child::before {
+  content: attr(data-empty-text);
+  float: left;
+  color: #7990A2;
+  pointer-events: none;
+  height: 0;
+}
+
+
+body{
+  &.block-scroll{
+    @apply overflow-y-hidden;
+  }
+}

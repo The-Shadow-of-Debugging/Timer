@@ -1,4 +1,4 @@
-import MainDashboard from '@/pages/MainDashboard'
+import MainDashboard from '@/pages/DashboardPage'
 import {createRouter, createWebHistory} from 'vue-router'
 
 const routes = [{

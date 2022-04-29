@@ -11,25 +11,8 @@
   </div>
 </template>
 <script>
-
-import axios from 'axios'
-
 export default {
   name: 'my-card',
-  methods: {
-    async fetchProjects() {
-      try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts/1')
-        console.log(response)
-      }
-      catch (e) {
-        console.log(e)
-      }
-    }
-  },
-  mounted() {
-    this.fetchProjects()
-  }
 }
 </script>
 <style>

@@ -1,0 +1,8 @@
+.vue-advanced-cropper{
+  &__foreground{
+    background:var(--color-white)!important;
+  }
+  &__background{
+    background:transparent!important;
+  }
+}

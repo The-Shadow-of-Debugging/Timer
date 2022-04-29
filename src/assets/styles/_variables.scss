@@ -1,0 +1,144 @@
+$font-main: 'Open Sans', sans-serif;
+$font-second: 'Mr Eaves Modern', sans-serif;
+
+:root {
+  /** Sizes */
+  --header-height: 68px;
+
+  /** Fonts */
+  --font-main: #{$font-main};
+  --font-second: #{$font-second};
+
+  /**Legacy Colors */
+  --color-primary-01: #1F4E6E;
+  --color-primary: #1F4E6E;
+  --color-accent-01: #ff6666;
+  --color-accent-02: #82b757;
+  --color-accent-03-200: #ffe6b5;
+  --color-neutral-01: #7990a2;
+  --color-bg-01: #fff;
+  --color-error-01: #c10e0e;
+  --color-success-01: #9dd470;
+  --color-warning-01: #fca554;
+  --color-answered-01: #ffd049;
+
+  /** Colors: */
+  --color-black: #000;
+  --color-white: #fff;
+
+  --color-primary-01-25: #EBF4F9;
+  --color-primary-01-50: #C9DAE1;
+  --color-primary-01-75: #A7BECA;
+  --color-primary-01-100: #85A2B3;
+  --color-primary-01-200: #63869C;
+  --color-primary-01-300: #416A85;
+  --color-primary-01-400: #1F4E6E;
+  --color-primary-01-500: #1A455F;
+  --color-primary-01-600: #163A50;
+  --color-primary-01-700: #122F41;
+  --color-primary-01-800: #0E2432;
+  --color-primary-01-900: #0A1923;
+
+  --color-accent-01-25: #FFE5E5;
+  --color-accent-01-50: #FFCFCF;
+  --color-accent-01-75: #FFBABA;
+  --color-accent-01-100: #FFA5A5;
+  --color-accent-01-200: #FF9090;
+  --color-accent-01-300: #FF7B7B;
+  --color-accent-01-400: #FF6666;
+  --color-accent-01-500: #D85555;
+  --color-accent-01-600: #B24444;
+  --color-accent-01-700: #8C3333;
+  --color-accent-01-800: #662222;
+  --color-accent-01-900: #401111;
+
+  --color-accent-02-25: #F2F7ED;
+  --color-accent-02-50: #E1EED4;
+  --color-accent-02-75: #CEE3BB;
+  --color-accent-02-100: #BBD8A2;
+  --color-accent-02-200: #A8CD89;
+  --color-accent-02-300: #95C270;
+  --color-accent-02-400: #82B757;
+  --color-accent-02-500: #709E49;
+  --color-accent-02-600: #5C823C;
+  --color-accent-02-700: #48662F;
+  --color-accent-02-800: #344A22;
+  --color-accent-02-900: #202E15;
+
+  --color-status-01-25: #F2F9EB;
+  --color-status-01-50: #E3F2D9;
+  --color-status-01-75: #D5ECC4;
+  --color-status-01-100: #C7E6AF;
+  --color-status-01-200: #B9E09A;
+  --color-status-01-300: #ABDA85;
+  --color-status-01-400: #9DD470;
+  --color-status-01-500: #84B460;
+  --color-status-01-600: #6C944E;
+  --color-status-01-700: #54743C;
+  --color-status-01-800: #3C542A;
+  --color-status-01-900: #243418;
+
+  --color-status-02-25: #FEF2E6;
+  --color-status-02-50: #FDE2CA;
+  --color-status-02-75: #FCD3AE;
+  --color-status-02-100: #FBC492;
+  --color-status-02-200: #FAB576;
+  --color-status-02-300: #F9A65A;
+  --color-status-02-400: #F8973E;
+  --color-status-02-500: #D27F33;
+  --color-status-02-600: #AD6829;
+  --color-status-02-700: #88511F;
+  --color-status-02-800: #633A15;
+  --color-status-02-900: #3E230B;
+
+  --color-status-03-25: #FFE5E5;
+  --color-status-03-50: #FFCFCF;
+  --color-status-03-75: #FFBABA;
+  --color-status-03-100: #FFA5A5;
+  --color-status-03-200: #FF9090;
+  --color-status-03-300: #FF7B7B;
+  --color-status-03-400: #FF6666;
+  --color-status-03-500: #D85555;
+  --color-status-03-600: #B24444;
+  --color-status-03-700: #8C3333;
+  --color-status-03-800: #662222;
+  --color-status-03-900: #401111;
+
+  --color-neutral-01-0: #FFFFFF;
+  --color-neutral-01-15: #F8F9FA;
+  --color-neutral-01-25: #F0F3F5;
+  --color-neutral-01-50: #DDE5E8;
+  --color-neutral-01-75: #C9D4DA;
+  --color-neutral-01-100: #B5C3CC;
+  --color-neutral-01-200: #A1B2BE;
+  --color-neutral-01-300: #8DA1B0;
+  --color-neutral-01-400: #7990A2;
+  --color-neutral-01-500: #697B8C;
+  --color-neutral-01-600: #566573;
+  --color-neutral-01-700: #434F5A;
+  --color-neutral-01-800: #303941;
+  --color-neutral-01-900: #1D2328;
+
+  --color-chart-01-25: #EAF4FA;
+  --color-chart-01-50: #D5E6F3;
+  --color-chart-01-75: #BDD9EE;
+  --color-chart-01-100: #A5CCE9;
+  --color-chart-01-200: #8DBFE4;
+  --color-chart-01-300: #75B2DF;
+  --color-chart-01-400: #5DA5DA;
+  --color-chart-01-500: #508BBA;
+  --color-chart-01-600: #417299;
+  --color-chart-01-700: #325978;
+  --color-chart-01-800: #234057;
+  --color-chart-01-900: #142736;
+
+  --color-alpha: #ffffff;
+
+  --color-sign-in-primary-black: #181818;
+  --color-sign-in-primary-white: #ffffff;
+  --color-sign-in-secondary-salmon: #FF6666;
+  --color-sign-in-secondary-eggplant: #5B3C44;
+  --color-sign-in-secondary-calypso:#2E678A;
+  --color-sign-in-secondary-cello: #1F4760;
+  --color-sign-in-neutral-alabaster: #F8F8F8;
+}

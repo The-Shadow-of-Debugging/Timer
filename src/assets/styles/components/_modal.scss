@@ -1,0 +1,78 @@
+/** Base styles */
+.vm--container {
+  overflow-x: hidden;
+
+  .vm--overlay {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .vm--modal {
+    @apply relative border border-neutral-01-50 overflow-y-auto;
+    box-shadow: 0 4px 14px rgba(37, 44, 49, 0.16);
+
+  }
+}
+
+.vm--container.scrollable .vm--modal {
+  margin-bottom: 0 !important;
+}
+
+/** Modal only */
+.vm--modal:not(.vue-dialog) {
+  height: 100vh !important;
+  top: 0 !important;
+  left: auto !important;
+  margin-left: auto !important;
+  // margin-top: 90px !important;
+  // margin-bottom: 15px !important;
+}
+
+/** Dialog only */
+.vue-dialog {
+  @apply px-8 py-10 text-base;
+  width: 100% !important;
+  max-width: 500px;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+
+  .vue-dialog-content {
+    @apply p-0 mb-10;
+  }
+
+  .vue-dialog-content-title {
+    @apply text-2xl font-semibold;
+  }
+
+  .vue-dialog-buttons {
+    @apply justify-end border-none;
+  }
+
+  .vue-dialog-button {
+    @apply inline-flex items-center justify-center rounded border border-solid border-primary-01-400 text-primary-01-400;
+    min-width: 150px;
+    height: auto;
+    flex: 0 !important;
+    padding: 12px 24px;
+    font-size: 16px;
+    line-height: 1.15;
+    font-weight: 700;
+    transition: 0.25s all;
+
+    &:hover {
+      @apply bg-primary-01-400 text-bg-01;
+    }
+
+    &:not(:first-of-type) {
+      @apply border-primary-01-400;
+      margin-left: 20px;
+    }
+
+    &--confirm {
+      @apply bg-primary-01-400 text-bg-01;
+
+      &:hover {
+        @apply bg-primary-01-400;
+      }
+    }
+  }
+}

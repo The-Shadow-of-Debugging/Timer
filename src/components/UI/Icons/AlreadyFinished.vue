@@ -6,7 +6,7 @@ export default {
   name: 'already-finished'
 }
 </script>
-<style>
+<style scoped>
 .finished {
   background-color: #F6F4FF;
   padding: 2px 8px;

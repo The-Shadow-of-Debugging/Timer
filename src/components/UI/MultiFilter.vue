@@ -12,7 +12,8 @@ export default {
 }
 </script>
 <style scoped>
-selection {
-  width: 400px;
+select {
+  border: 1px solid #C4C4C4;
+  border-radius: 4px;
 }
 </style>

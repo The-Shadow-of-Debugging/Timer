@@ -1,0 +1,6 @@
+.page {
+  @apply relative;
+  &__header {
+    @apply flex flex-wrap items-center py-8 border-b border-neutral-01-15;
+  }
+}

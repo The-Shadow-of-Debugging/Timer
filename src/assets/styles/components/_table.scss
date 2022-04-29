@@ -1,0 +1,82 @@
+// import the styles
+@import 'vue-good-table/dist/vue-good-table.css';
+
+.vgt-wrap {
+
+  table.vgt-table {
+    @apply border border-neutral-01-50 rounded;
+    /** Base */
+    td,
+    th {
+      height: 50px; // Works as min-height
+      border-left: none;
+      border-right: none;
+      background-image: none;
+      vertical-align: middle;
+    }
+    [type="checkbox"] {
+      @apply rounded;
+      width: 18px;
+      height: 18px;
+      box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+      vertical-align: middle;
+    }
+    /** Head */
+    thead {
+      th {
+        @apply border border-neutral-01-50 text-sm leading-none text-primary-01-900 font-bold uppercase px-5 py-2;
+        &.sortable {
+          &::before {
+            border-top-color: currentColor;
+          }
+          &::after {
+            border-bottom-color: currentColor;
+          }
+        }
+      }
+    }
+    /** Body */
+    tbody {
+      td {
+        @apply border border-neutral-01-50 px-5 py-2;
+      }
+      tr {
+        &:nth-child(odd) {
+          th,
+          td {
+            @apply bg-neutral-01-15;
+          }
+        }
+        &:hover {
+          th,
+          td {
+            @apply bg-neutral-01-25;
+          }
+        }
+      }
+    }
+  }
+  /** Actions */
+  &__actions-footer {
+    @apply border border-neutral-01-50 px-5 py-3;
+    border-top: none;
+    &:empty {
+      @apply py-0 border-none;
+    }
+  }
+  /** Footer */
+  &__footer {
+    @apply bg-transparent p-5 text-primary-01;
+    background: none;
+    border-top: none;
+  }
+  /** Other */
+  .vgt-selection-info-row {
+    @apply text-warning-01 border-neutral-01-50 px-5 py-3;
+  }
+  .vgt-text-disabled {
+    @apply text-neutral-01;
+  }
+  .vgt-responsive {
+  }
+}

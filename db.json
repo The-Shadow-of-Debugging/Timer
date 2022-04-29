@@ -1,5 +1,11 @@
 {
-    "projects": {
-        
-    }
+    "projects": [
+        {
+            "id": 1,
+            "image": "1.jpg",
+            "title": "Make Final Desicion",
+            "status": "not started",
+            "timeToStart": "1:30:00"
+        }
+    ]
 }

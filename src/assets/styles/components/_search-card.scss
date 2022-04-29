@@ -1,0 +1,20 @@
+.search-card {
+  border-bottom: 1px solid var(--color-neutral-01-300);
+  &:first-child {
+    border-top: 1px solid var(--color-neutral-01-300);
+  }
+}
+.tags__title {
+  padding: 10px 0;
+}
+.page--search {
+  &__autocomplete {
+    @apply flex flex-col mx-auto border-b border-r border-l border-neutral-01-15 w-2/3;
+  }
+  &__autocomplete-result {
+    @apply w-full justify-center flex mb-1;
+  }
+  &__autocomplete-result:hover {
+    @apply bg-neutral-01-25;
+  }
+}

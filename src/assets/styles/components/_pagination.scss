@@ -1,0 +1,28 @@
+/*Base*/
+.c-sliding-pagination{
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  &__list-element{
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-neutral-01-300);
+    border-radius: 5px;
+  }
+  &_list-element--disabled{
+    padding: 8px 8px;
+  }
+  &__list-element--active {
+    border: 1px solid var(--color-primary-01-400);
+  }
+  &__list-element:hover {
+    background-color: var(--color-neutral-01-100);
+  }
+}
