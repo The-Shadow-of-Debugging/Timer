@@ -15,7 +15,9 @@ export default createStore({
     ]
   },
   getters: {
-
+    PROJECTS(state) {
+      return state.projects
+    }
   },
   mutations: {
     setProjects(state, projects) {
