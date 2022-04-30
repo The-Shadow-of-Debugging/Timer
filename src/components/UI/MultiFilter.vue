@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-  name:'multi-filter'
+  name:'MultiFilter'
 }
 </script>
 <style scoped>
