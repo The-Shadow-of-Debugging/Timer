@@ -1,18 +1,31 @@
+
 <template>
-  <select>
-    <option>All</option>
-    <option>Finished</option>
-    <option>Started</option>
-    <option>Not started</option>
+  <select :value="modelValue" @change="changeOption">
+    <option v-for="option in options" :key="option.value" :value="option.value">{{option.name}}</option>
   </select>
 </template>
 <script>
 export default {
-  name:'multi-filter'
+  name:'MultiFilter',
+  props:{
+    modelValue: {
+      type: String,
+    },
+    options: {
+      type: Array,
+      default: () => []
+    }
+  },
+  methods: {
+    changeOption(event) {
+      this.$emit('update:modelValue', event.target.value);
+    }
+  },
 }
 </script>
 <style scoped>
-selection {
-  width: 400px;
+select {
+  border: 1px solid #C4C4C4;
+  border-radius: 4px;
 }
 </style>

@@ -6,7 +6,7 @@ export default {
   name: 'already-started'
 }
 </script>
-<style>
+<style scoped>
 .started {
   background-color: #EBF8EC;
   padding: 2px 8px;

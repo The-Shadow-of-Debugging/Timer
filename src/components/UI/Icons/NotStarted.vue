@@ -6,7 +6,7 @@ export default {
   name: 'not-started'
 }
 </script>
-<style>
+<style scoped>
 .notStarted {
   background-color: #F5F5F5;
   padding: 2px 8px;

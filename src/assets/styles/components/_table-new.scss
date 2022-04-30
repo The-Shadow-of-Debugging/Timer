@@ -1,0 +1,44 @@
+.vgt-wrap{
+  @apply border-neutral-01-50 border-t;
+  table.vgt-table{
+    border:0!important;
+    td, th{
+      border-left:0;
+      border-right:0;
+    }
+    .sorting{
+      @apply flex items-center;
+      &:after{
+        position: relative;
+        top:auto;
+        left:auto;
+        right:auto;
+        @apply mt-0 ml-2;
+        border-width:0!important;
+        width:7px;
+        height:12px;
+        content: url(~assets/images/table-sort/table-sort-default.svg);
+      }
+      &.sorting-asc{
+        &:after{
+          content: url(~assets/images/table-sort/table-sort-asc.svg);
+        }
+      }
+      &.sorting-desc{
+        &:after{
+          content: url(~assets/images/table-sort/table-sort-desc.svg);
+        }
+      }
+    }
+    th{
+      border-top:0;
+      position:sticky;
+      top:0;
+      @apply bg-white z-20 text-button-02;
+    }
+    td{
+      vertical-align: top;
+      @apply text-primary-01;
+    }
+  }
+}

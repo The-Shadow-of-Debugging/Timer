@@ -1,0 +1,85 @@
+&{
+  $stylingRoot: &;
+  &__styling{
+    @apply border rounded transition duration-200 items-center inline-block h-11;
+    &:hover {
+      @apply border-neutral-01-400;
+    }
+    &-placeholder-input{
+      &::placeholder {
+        @apply text-neutral-01-400 text-body-01;
+      }
+    }
+    &-text-input{
+      @apply text-body-01 border-0 bg-transparent outline-none;
+      @apply text-neutral-01-900;
+    }
+    &-placeholder-color{
+      @apply text-neutral-01-400;
+    }
+    &-text-color{
+      @apply text-neutral-01-900;
+    }
+    &-error-color{
+      // TODO: fix to error color
+      color: #BF1A2F;
+    }
+  }
+  &_disabled{
+    #{$stylingRoot}__styling{
+      border-color: var(--color-neutral-01-100) !important;
+
+      @apply pointer-events-none;
+      &-placeholder-input{
+        &::placeholder {
+          @apply text-neutral-01-100;
+        }
+      }
+      &-text-input{
+        @apply text-body-01 border-0 bg-transparent outline-none;
+        @apply text-neutral-01-100;
+      }
+      &-placeholder-color{
+        @apply text-neutral-01-100;
+      }
+      &-text-color{
+        @apply text-neutral-01-100;
+      }
+    }
+  }
+  &_active {
+    #{$stylingRoot}__styling{
+      border-color: var(--color-neutral-01-600) !important;
+    }
+  }
+
+
+  /* sizes */
+  &_small{
+    #{$stylingRoot}__styling{
+      @apply h-8;
+      &-text-input{
+        @apply text-body-03;
+      }
+    }
+  }
+  &_error{
+    #{$stylingRoot}__styling{
+      // TODO: fix to error color
+      border-color: #BF1A2F;
+    }
+    &#{$stylingRoot}_active {
+      #{$stylingRoot}__styling{
+        border-color: #BF1A2F!important;
+      }
+    }
+  }
+}
+
+&{
+  /* states */
+  &__styling {
+    @apply border-neutral-01-75;
+  }
+
+}
