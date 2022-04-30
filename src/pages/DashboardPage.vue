@@ -1,8 +1,10 @@
 <template>
   <div class="DashboardPage">
     <h1 class="title">Projects Dashboard</h1>
-    <div class="filter mb-5"><MultiFilter></MultiFilter></div>
-    <ProjectList :projects="PROJECTS"></ProjectList>
+    <div class="filter mb-5">
+      <MultiFilter :model-value="selectedSort" @update:model-value="setSelectedSort" :options="sortOptions"></MultiFilter>
+    </div>
+    <ProjectList :projects="showSortedProjects"></ProjectList>
   </div>
 
 </template>
@@ -16,22 +18,26 @@ export default {
   components: { ProjectList, MultiFilter },
   methods: {
     ...mapMutations({
+      setSelectedSort: 'project/setSelectedSort'
     }),
     ...mapActions({
       fetchProjects: 'project/fetchProjects'
     })
   },
-  computed: {
-    ...mapGetters({
-      PROJECTS:'project/PROJECTS'
-    }),
-    ...mapState({
-      projects: state => state.project.projects
-    })
-  },
   mounted() {
     this.fetchProjects()
   },
+  computed: {
+    ...mapState({
+      projects: state => state.project.projects,
+      sortOptions: state => state.project.sortOptions,
+      selectedSort: state => state.project.selectedSort,
+    }),
+    ...mapGetters({
+      sortedProjects: 'project/sortedProjects',
+      showSortedProjects:'project/showSortedProjects'
+    })
+  }
 }
 </script>
 

@@ -3,7 +3,7 @@ import axios from 'axios'
 export const projectsModule = {
   state: () => ({
     projects: [],
-    isProjectsloading: false,
+    //isProjectsloading: false,
     selectedSort: '',
     limit: 20,
     page: 1,
@@ -12,11 +12,17 @@ export const projectsModule = {
       {value: 'notStarted', name: 'Not started'},
       {value: 'started', name: 'Started'},
       {value: 'finished', name: 'Finished'},
+      {value: 'all', name: 'All'}
     ]
   }),
   getters: {
-    PROJECTS(state) {
-      return state.projects
+    sortedProjects(state) {
+      return [...state.projects].sort((project1, project2) => project1[state.selectedSort]?.localeCompare(project2[state.selectedSort]))
+    },
+    showSortedProjects(state, getters) {
+      if(state.selectedSort === 'all')
+        return getters.sortedProjects
+      return getters.sortedProjects.filter(project => project.status.includes(state.selectedSort))
     }
   },
   mutations: {
@@ -54,6 +60,7 @@ export const projectsModule = {
         });
         commit('setTotalPages', Math.ceil(response.headers['x-total-count'] / state.limit))
         commit('setProjects', response.data)
+        commit('setSelectedSort', 'all')
       } catch (e) {
         console.log(e)
       } finally {
