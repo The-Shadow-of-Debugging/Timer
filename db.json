@@ -2,10 +2,171 @@
     "projects": [
         {
             "id": 1,
-            "image": "1.jpg",
             "title": "Make Final Desicion",
-            "status": "not started",
-            "timeToStart": "1:30:00"
+            "status": "notStarted",
+            "timeToStart": "1:30:00",
+            "timeToEnd": ""
+        },
+        {
+            "id": 2,
+            "title": "Do they know the topic?",
+            "status": "started",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:45:00"
+        },
+        {
+            "id": 3,
+            "title": "Let both sides be heard",
+            "status": "finished",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:36:43"
+        },
+        {
+            "id": 4,
+            "title": "Make Final Desicion",
+            "status": "notStarted",
+            "timeToStart": "1:30:00",
+            "timeToEnd": ""
+        },
+        {
+            "id": 5,
+            "title": "Do they know the topic?",
+            "status": "started",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:45:00"
+        },
+        {
+            "id": 6,
+            "title": "Let both sides be heard",
+            "status": "finished",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:36:43"
+        },
+        {
+            "id": 7,
+            "title": "Make Final Desicion",
+            "status": "notStarted",
+            "timeToStart": "1:30:00",
+            "timeToEnd": ""
+        },
+        {
+            "id": 8,
+            "title": "Do they know the topic?",
+            "status": "started",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:45:00"
+        },
+        {
+            "id": 9,
+            "title": "Let both sides be heard",
+            "status": "finished",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:36:43"
+        },
+        {
+            "id": 10,
+            "title": "Make Final Desicion",
+            "status": "notStarted",
+            "timeToStart": "1:30:00",
+            "timeToEnd": ""
+        },
+        {
+            "id": 11,
+            "title": "Do they know the topic?",
+            "status": "started",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:45:00"
+        },
+        {
+            "id": 12,
+            "title": "Let both sides be heard",
+            "status": "finished",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:36:43"
+        },
+        {
+            "id": 13,
+            "title": "Make Final Desicion",
+            "status": "notStarted",
+            "timeToStart": "1:30:00",
+            "timeToEnd": ""
+        },
+        {
+            "id": 14,
+            "title": "Do they know the topic?",
+            "status": "started",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:45:00"
+        },
+        {
+            "id": 15,
+            "title": "Let both sides be heard",
+            "status": "finished",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:36:43"
+        },
+        {
+            "id": 16,
+            "title": "Make Final Desicion",
+            "status": "notStarted",
+            "timeToStart": "1:30:00",
+            "timeToEnd": ""
+        },
+        {
+            "id": 17,
+            "title": "Do they know the topic?",
+            "status": "started",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:45:00"
+        },
+        {
+            "id": 18,
+            "title": "Let both sides be heard",
+            "status": "finished",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:36:43"
+        },
+        {
+            "id": 19,
+            "title": "Make Final Desicion",
+            "status": "notStarted",
+            "timeToStart": "1:30:00",
+            "timeToEnd": ""
+        },
+        {
+            "id": 20,
+            "title": "Do they know the topic?",
+            "status": "started",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:45:00"
+        },
+        {
+            "id": 21,
+            "title": "Let both sides be heard",
+            "status": "finished",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:36:43"
+        },
+        {
+            "id": 22,
+            "title": "Make Final Desicion",
+            "status": "notStarted",
+            "timeToStart": "1:30:00",
+            "timeToEnd": ""
+        },
+        {
+            "id": 23,
+            "title": "Do they know the topic?",
+            "status": "started",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:45:00"
+        },
+        {
+            "id": 24,
+            "title": "Let both sides be heard",
+            "status": "finished",
+            "timeToStart": "1:30:00",
+            "timeToEnd": "1:36:43"
         }
     ]
 }

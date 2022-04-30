@@ -5,7 +5,7 @@ export const projectsModule = {
     projects: [],
     isProjectsloading: false,
     selectedSort: '',
-    limit: 10,
+    limit: 20,
     page: 1,
     totalPages: 0,
     sortOptions: [
