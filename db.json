@@ -168,5 +168,14 @@
             "timeToStart": "1:30:00",
             "timeToEnd": "1:36:43"
         }
+    ],
+    "topics": [
+        {
+            "id": 1,
+            "title": "topic1",
+            "start": "12:00",
+            "end": "12:15",
+            "left": "12:15:08"
+        }
     ]
 }

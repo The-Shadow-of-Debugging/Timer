@@ -1,9 +1,15 @@
-import MainDashboard from '@/pages/DashboardPage'
+import DashboardPage from '@/pages/DashboardPage'
+import ProjectPage from '@/pages/ProjectPage'
 import {createRouter, createWebHistory} from 'vue-router'
 
-const routes = [{
+const routes = [
+{
     path:'/',
-    component: MainDashboard
+    component: DashboardPage
+},
+{
+    path: '/project',
+    component: ProjectPage
 }]
 
 const router = createRouter({
