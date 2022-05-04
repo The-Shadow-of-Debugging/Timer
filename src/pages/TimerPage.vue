@@ -1,6 +1,6 @@
 <template>
   <div class="TimerPage">
-
+    <h1>There will be a timer</h1>
   </div>
 </template>
 

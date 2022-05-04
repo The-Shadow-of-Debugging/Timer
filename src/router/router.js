@@ -1,5 +1,6 @@
 import DashboardPage from '@/pages/DashboardPage'
 import ProjectPage from '@/pages/ProjectPage'
+import TimerPage from '@/pages/TimerPage'
 import {createRouter, createWebHistory} from 'vue-router'
 
 const routes = [
@@ -8,9 +9,13 @@ const routes = [
     component: DashboardPage
 },
 {
-    path: '/project',
+    path: '/project/:id',
     component: ProjectPage
-}]
+},
+    {
+        path: '/timer',
+        component: TimerPage
+    }]
 
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),

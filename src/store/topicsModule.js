@@ -6,7 +6,7 @@ export const topicsModule = {
     }),
     getters: {
         getTopics(state) {
-            return state.topics
+            return [...state.topics]
         }
     },
     mutations: {
