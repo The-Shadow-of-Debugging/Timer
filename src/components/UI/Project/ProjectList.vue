@@ -1,6 +1,6 @@
 <template>
 <div class="ProjectList">
-    <ProjectCard v-for="project in projects" :key="project.id" :project="project" class="mr-5 mb-5"></ProjectCard>
+    <ProjectCard @click="$router.push('project')" v-for="project in projects" :key="project.id" :project="project" class="mr-5 mb-5"></ProjectCard>
 </div>
 </template>
 
