@@ -13,7 +13,7 @@ const routes = [
     component: ProjectPage
 },
     {
-        path: '/timer',
+        path: '/timer/:id',
         component: TimerPage
     }]
 

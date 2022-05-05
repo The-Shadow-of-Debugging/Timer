@@ -1,13 +1,13 @@
 <template>
   <div class="ProjectPage">
     <div class="ProjectPage__container">
-      <TopicsTable :topics="getTopic" @remove="deleteTopic"></TopicsTable>
+      <TopicsTable :topics="getTopic" @remove="removeTopic"></TopicsTable>
       <div @click="showDialog">+ New Topic</div>
       <TopicWindow v-model:show="dialogVisible" class="TopicWindow">
         <TopicForm @create="createTopic"></TopicForm>
       </TopicWindow>
     </div>
-    <MyButton :title="'Start'" class="ProjectPage__btn" @click="$router.push('/timer')"></MyButton>
+    <MyButton :title="'Start'" class="ProjectPage__btn" @click="$router.push(`/timer/${$route.params.id}`)"></MyButton>
   </div>
 </template>
 
@@ -38,14 +38,11 @@ export default {
     createTopic(topic) {
       this.getTopic.push(topic)
       this.dialogVisible = false
-    }
-  },
-  watch: {
-    deleteTopic: {
-      handler: function(topic) {
-        console.log(this.topics.filter(t => t.id !== topic.id));
-        this.$commit('setTopics', this.topics.filter(t => t.id !== topic.id))
-      }
+    },
+    removeTopic(topic) {
+      const gt = this.getTopic.filter(t => t.id !== topic.id).slice(0)
+      this.getTopic.length = 0
+      gt.forEach(topic => this.getTopic.push(topic))
     }
   },
   computed: {
