@@ -14,7 +14,7 @@
 <script>
 import TopicsTable from '@/components/UI/TopicsTable.vue'
 import {mapState, mapMutations, mapGetters, mapActions} from 'vuex'
-import MyButton from '@/components/UI/MyButton'
+import MyButton from '@/components/UI/Buttons/MyButton'
 import TopicWindow from '@/components/UI/ModalWindows/TopicWindow'
 import TopicForm from '@/components/UI/Forms/TopicForm'
 export default {

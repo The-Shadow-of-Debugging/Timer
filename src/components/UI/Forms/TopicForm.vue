@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import MyButton from '@/components/UI/MyButton'
+import MyButton from '@/components/UI/Buttons/MyButton'
 import MyInput from '@/components/UI/Input/MyInput'
 export default {
     name:"TopicForm",

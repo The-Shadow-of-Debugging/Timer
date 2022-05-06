@@ -1,5 +1,5 @@
 <template>
-  <div class="pie animate" :style="{'--p':number}">
+  <div class="pie animate no-round" :style="{'--p':number}">
     <div>
       {{date.hours + ':' + date.minutes + ':' + date.seconds}}
     </div>
@@ -70,6 +70,12 @@ export default {
 }
 .animate {
   animation: p 1s .5s both;
+}
+.no-round:before {
+  background-size: 0 0, auto;
+}
+.no-round:after {
+  content: none;
 }
 .no-round:before {
   background-size: 0 0, auto;
