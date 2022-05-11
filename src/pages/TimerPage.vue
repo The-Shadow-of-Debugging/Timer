@@ -7,6 +7,20 @@
       <PauseButton class="next" v-else @click="stopTimer"></PauseButton>
       <NextButton @click="nextTopic" :disabled="disable"></NextButton>
     </div>
+    <div class="authors">
+      <div class="authors__item">
+        <h2>Previous</h2>
+        <div>{{}}</div>
+      </div>
+      <div class="authors__item">
+        <h2>Now</h2>
+        <div>{{}}</div>
+      </div>
+      <div class="authors__item">
+        <h2>Next</h2>
+        <div>{{}}</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -34,19 +48,11 @@ export default {
       setTopics: 'topic/setTopics'
     }),
     ...mapActions({
+      getTopics: 'topic/getTopics',
       fetchTopics: 'topic/fetchTopics'
     }),
     showDialog() {
       this.dialogVisible = true
-    },
-    createTopic(topic) {
-      this.getTopic.push(topic)
-      this.dialogVisible = false
-    },
-    removeTopic(topic) {
-      const gt = this.getTopic.filter(t => t.id !== topic.id).slice(0)
-      this.getTopic.length = 0
-      gt.forEach(topic => this.getTopic.push(topic))
     },
     startTimer() {
       this.start = true
@@ -78,6 +84,7 @@ export default {
       getTopics: 'topic/getTopics'
     }),
     getTopic(){
+      console.log('this.getTopics', this.getTopics)
       return {...this.getTopics.find(topic => topic.id === +this.$route.params.id)}.themes
     },
     currentTime() {
@@ -95,9 +102,6 @@ export default {
         "minutes": String(date.getMinutes()).length === 2 ? date.getMinutes() : '0' + date.getMinutes(),
         "seconds": String(date.getSeconds()).length === 2 ? date.getSeconds() : '0' +date.getSeconds()}
     }
-  },
-  mounted(){
-    this.fetchTopics()
   }
 }
 </script>
@@ -108,11 +112,16 @@ export default {
   height: 100vh;
 }
 .buttons {
-  @apply flex justify-center;
+  @apply flex justify-center mb-20;
 }
 .timer {
 }
 .next {
   @apply mx-3;
+}
+.authors {
+  @apply flex justify-around text-2xl font-semibold;
+  width: 100vw;
+  color: #B5AF1C;
 }
 </style>

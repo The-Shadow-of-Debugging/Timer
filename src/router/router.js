@@ -14,7 +14,7 @@ const routes = [
 },
     {
         path: '/timer/:id',
-        component: TimerPage
+        component: TimerPage,
     }]
 
 const router = createRouter({

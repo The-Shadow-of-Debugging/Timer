@@ -7,7 +7,7 @@
         <TopicForm @create="createTopic"></TopicForm>
       </TopicWindow>
     </div>
-    <MyButton :title="'Start'" class="ProjectPage__btn" @click="$router.push(`/timer/${$route.params.id}`)"></MyButton>
+    <MyButton :title="'Start'" class="ProjectPage__btn" @click="$router.push(`/timer/${$route.params.id}`)" ></MyButton>
   </div>
 </template>
 
@@ -30,13 +30,16 @@ export default {
       setTopics: 'topic/setTopics'
     }),
     ...mapActions({
-      fetchTopics: 'topic/fetchTopics'
+      fetchTopics: 'topic/fetchTopics',
+      addTopic: 'topic/addTopic',
+      obtainTopics: 'topic/obtainTopics'
     }),
     showDialog() {
       this.dialogVisible = true
     },
     createTopic(topic) {
-      this.getTopic.push(topic)
+      //this.getTopic.push(topic)
+      this.addTopic(topic)
       this.dialogVisible = false
     },
     removeTopic(topic) {
@@ -52,8 +55,10 @@ export default {
     ...mapGetters({
       getTopics: 'topic/getTopics'
     }),
-    getTopic(){
-      return {...this.getTopics.find(topic => topic.id === +this.$route.params.id)}.themes
+    getTopic() {
+      // eslint-disable-next-line vue/no-async-in-computed-properties
+       this.obtainTopics(+this.$route.params.id)
+       return {...{...this.topics}.themes}
     }
   },
   mounted(){
