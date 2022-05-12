@@ -2,10 +2,10 @@
   <div class="TimerPage">
     <MyTimer :topics="getTopic" :date="currentTime" :number="process" class="timer mx-auto"></MyTimer>
     <div class="buttons">
-      <PreviousButton @click="previousTopic" :disabled="disable"></PreviousButton>
+      <PreviousButton @click="previousTimer" :disabled="disable"></PreviousButton>
       <StartButton class="next" v-if="!start" @click="startTimer"></StartButton>
       <PauseButton class="next" v-else @click="stopTimer"></PauseButton>
-      <NextButton @click="nextTopic" :disabled="disable"></NextButton>
+      <NextButton @click="nextTimer" :disabled="disable"></NextButton>
     </div>
     <div class="authors">
       <div class="authors__item">
@@ -14,7 +14,7 @@
       </div>
       <div class="authors__item">
         <h2>Now</h2>
-        <div>{{}}</div>
+        <div>{{topics[0].title}}</div>
       </div>
       <div class="authors__item">
         <h2>Next</h2>
@@ -48,8 +48,6 @@ export default {
       setTopics: 'topic/setTopics'
     }),
     ...mapActions({
-      getTopics: 'topic/getTopics',
-      fetchTopics: 'topic/fetchTopics'
     }),
     showDialog() {
       this.dialogVisible = true
@@ -67,11 +65,11 @@ export default {
       this.start = false
       clearInterval(this.stop)
     },
-    nextTopic() {
+    nextTimer() {
       this.process = 101
       this.getTopic.length - 1 > this.index ? this.index += 1 : this.index
     },
-    previousTopic() {
+    previousTimer() {
       this.process = 101
       this.index ? this.index -= 1 : this.index
     }
@@ -84,8 +82,8 @@ export default {
       getTopics: 'topic/getTopics'
     }),
     getTopic(){
-      console.log('this.getTopics', this.getTopics)
-      return {...this.getTopics.find(topic => topic.id === +this.$route.params.id)}.themes
+      console.log('this.getTopics', this.topics)
+      return this.topics
     },
     currentTime() {
       /* Вычитать 10800*/

@@ -32,7 +32,8 @@ export default {
     ...mapActions({
       fetchTopics: 'topic/fetchTopics',
       addTopic: 'topic/addTopic',
-      obtainTopics: 'topic/obtainTopics'
+      obtainTopics: 'topic/obtainTopics',
+      deleteTopic: 'topic/deleteTopic'
     }),
     showDialog() {
       this.dialogVisible = true
@@ -43,9 +44,10 @@ export default {
       this.dialogVisible = false
     },
     removeTopic(topic) {
-      const gt = this.getTopic.filter(t => t.id !== topic.id).slice(0)
-      this.getTopic.length = 0
-      gt.forEach(topic => this.getTopic.push(topic))
+      //const gt = this.getTopic.filter(t => t.id !== topic.id).slice(0)
+      //this.getTopic.length = 0
+      //gt.forEach(topic => this.getTopic.push(topic))
+      this.deleteTopic(topic)
     }
   },
   computed: {
@@ -58,7 +60,7 @@ export default {
     getTopic() {
       // eslint-disable-next-line vue/no-async-in-computed-properties
        this.obtainTopics(+this.$route.params.id)
-       return {...{...this.topics}.themes}
+       return this.topics
     }
   },
   mounted(){

@@ -20,20 +20,29 @@ export const topicsModule = {
             try {
                 const response = await axios.get('http://localhost:3000/topics');
                 commit('setTopics', response.data)
+                console.log('fetchTopics', state.topics)
             } catch (e) {
                 console.log(e)
             }
         },
         // eslint-disable-next-line no-unused-vars
-        addTopic({state, commit}, topic) {
-            console.log('[...state.topics]', ({...state.topics}.themes));
-            ({...state.topics}.themes).push(topic)
-            console.log('[...state.topics]', ({...state.topics}.themes))
+        addTopic({state, commit, getters}, topic) {
+            console.log('addTopic', state.topics)
+            state.topics.push(topic)
+            //commit('setTopics', getters.getTopics)
+            console.log('[...state.topics]', state.topics)
         },
         // eslint-disable-next-line no-unused-vars
         obtainTopics({state, commit, getters}, id) {
-            commit('setTopics', getters.getTopics.find(topic => topic.id === id))
-        }
+            commit('setTopics', {...getters.getTopics.find(topic => topic.id === id)}.themes)
+            console.log('obtainTopics', state.topics)
+        },
+        deleteTopic({state}, topic) {
+            const gt = state.topics.filter(t => t.id !== topic.id).slice(0)
+            console.log('deleteTopic', gt)
+            state.topics.length = 0
+            gt.forEach(topic => state.topics.push(topic))
+        },
     },
     namespaced: true
 }
