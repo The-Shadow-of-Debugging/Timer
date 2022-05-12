@@ -5,7 +5,7 @@ export const projectsModule = {
     projects: [],
     //isProjectsloading: false,
     selectedSort: '',
-    limit: 20,
+    limit: 40,
     page: 1,
     totalPages: 0,
     sortOptions: [
@@ -46,13 +46,16 @@ export const projectsModule = {
     },
     setTotalPages(state, totalPages) {
       state.totalPages = totalPages
+    },
+    ADD_PROJECT(state, project) {
+      state.projects.unshift(project)
     }
   },
   actions: {
     async fetchProjects({state, commit}) {
       try {
         //commit('setLoading', true)
-        const response = await axios.get('http://localhost:3000/projects', {
+        const response = await axios.get('http://localhost:3000/projects?_sort=id&_order=desc', {
           params: {
             _page: state.page,
             _limit: state.limit
@@ -67,10 +70,10 @@ export const projectsModule = {
         //commit('setLoading', false)
       }
     },
-    addProject({state}, project) {
+    async addProject({state, commit}, project) {
       console.log('addProject', state.projects)
-      state.projects.push(project)
-      project
+      commit('ADD_PROJECT', project)
+      await axios.post('http://localhost:3000/projects', project)
     }
   },
   namespaced: true

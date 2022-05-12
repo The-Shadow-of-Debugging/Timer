@@ -50,18 +50,22 @@ export default {
       setTopics: 'topic/setTopics'
     }),
     ...mapActions({
+      fetchTopics: 'topic/fetchTopics',
     }),
     showDialog() {
       this.dialogVisible = true
     },
     startTimer() {
       this.start = true
-      const difTime = Math.abs((100 / (this.getTopic[this.index].end - this.getTopic[this.index].start)))
+      const difTime = this.getTopic[this.index].end - this.getTopic[this.index].start
+      let seconds = 1
       this.stop = setInterval(() => {
         if (this.getTopic[this.index].end - 1 === this.getTopic[this.index].start)
           clearInterval(this.stop)
         this.getTopic[this.index].end -= 1
-        this.process -= difTime},1000)
+        this.process = (100 -(seconds / difTime) * 100)
+        seconds++
+        },1000)
     },
     stopTimer() {
       this.start = false
@@ -118,6 +122,9 @@ export default {
         "minutes": String(date.getMinutes()).length === 2 ? date.getMinutes() : '0' + date.getMinutes(),
         "seconds": String(date.getSeconds()).length === 2 ? date.getSeconds() : '0' +date.getSeconds()}
     }
+  },
+  mounted(){
+    this.fetchTopics()
   }
 }
 </script>

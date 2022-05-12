@@ -12,6 +12,9 @@ export const topicsModule = {
     mutations: {
         setTopics(state, topics) {
             state.topics = topics
+        },
+        ADD_TOPIC(state, topic) {
+            state.topics.push(topic)
         }
     },
     actions: {
@@ -25,14 +28,10 @@ export const topicsModule = {
                 console.log(e)
             }
         },
-        // eslint-disable-next-line no-unused-vars
-        addTopic({state, commit, getters}, topic) {
-            console.log('addTopic', state.topics)
-            state.topics.push(topic)
-            //commit('setTopics', getters.getTopics)
-            console.log('[...state.topics]', state.topics)
+        async addTopic({commit}, topic) {
+            commit('ADD_TOPIC', topic)
+           // await axios.post('http://localhost:3000/topics/1/themes', topic)
         },
-        // eslint-disable-next-line no-unused-vars
         obtainTopics({state, commit, getters}, id) {
             if (typeof {...getters.getTopics.find(topic => topic.id === id)}.themes !== 'undefined') {
                 commit('setTopics', {...getters.getTopics.find(topic => topic.id === id)}.themes)

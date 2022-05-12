@@ -33,7 +33,6 @@ export default {
     },
     methods: {
         createProject() {
-            this.project.id = Date.now()
             this.$emit('create', this.project)
             this.project = {
                 "title": "",

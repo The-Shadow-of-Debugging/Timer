@@ -37,7 +37,6 @@ export default {
     },
     methods: {
         createTopic() {
-            this.topic.id = Date.now()
             this.$emit('create', this.topic)
             this.topic = {
                 "title": "",
