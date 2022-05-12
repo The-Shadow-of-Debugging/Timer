@@ -7,7 +7,7 @@
         <TopicForm @create="createTopic"></TopicForm>
       </TopicWindow>
     </div>
-    <MyButton :title="'Start'" class="ProjectPage__btn" @click="$router.push(`/timer/${$route.params.id}`)" ></MyButton>
+    <MyButton :title="'Start'" class="ProjectPage__btn" @click="$router.push(`/timer/${$route.params.id}`)"></MyButton>
   </div>
 </template>
 

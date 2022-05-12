@@ -17,7 +17,8 @@ export default {
 
 <style lang="scss" scoped>
 .MyButton {
-  @apply w-36 h-9 rounded text-center leading-8;
+  @apply w-36 h-9 rounded text-center leading-8 font-medium;
   background: #D9D9D9;
+  color: #575757;
 }
 </style>

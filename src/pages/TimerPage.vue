@@ -8,17 +8,17 @@
       <NextButton @click="nextTimer" :disabled="disable"></NextButton>
     </div>
     <div class="authors">
-      <div class="authors__item">
+      <div class="authors__item" v-if="previous !== index">
         <h2>Previous</h2>
-        <div>{{}}</div>
+        <div>{{topics[previous].title}}</div>
       </div>
       <div class="authors__item">
         <h2>Now</h2>
-        <div>{{topics[0].title}}</div>
+        <div>{{topics[index].title}}</div>
       </div>
-      <div class="authors__item">
+      <div class="authors__item" v-if="next !== index">
         <h2>Next</h2>
-        <div>{{}}</div>
+        <div>{{topics[next].title}}</div>
       </div>
     </div>
   </div>
@@ -40,7 +40,9 @@ export default {
       process: 101,
       start: false,
       index: 0,
-      disable: false
+      disable: false,
+      next: 0,
+      previous: 0
     }
   },
   methods: {
@@ -67,11 +69,23 @@ export default {
     },
     nextTimer() {
       this.process = 101
-      this.getTopic.length - 1 > this.index ? this.index += 1 : this.index
+      if (this.getTopic.length - 1 > this.index) {
+        this.previous = this.index
+        this.index += 1
+        if (this.index !== this.getTopic.length - 1) {
+          this.next = this.index + 1
+        }
+      }
     },
     previousTimer() {
       this.process = 101
-      this.index ? this.index -= 1 : this.index
+      if (this.index) {
+        this.next = this.index
+        this.index -= 1
+        if (this.index !== 0) {
+          this.previous = this.index - 1
+        }
+      }
     }
   },
   computed: {
@@ -86,6 +100,10 @@ export default {
       return this.topics
     },
     currentTime() {
+      if (this.index !== this.getTopic.length - 1) {
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+        this.next = this.index + 1
+      }
       /* Вычитать 10800*/
       if (this.getTopic[this.index].start >= this.getTopic[this.index].end) {
         this.stopTimer()
@@ -113,6 +131,7 @@ export default {
   @apply flex justify-center mb-20;
 }
 .timer {
+  @apply m-3.5;
 }
 .next {
   @apply mx-3;

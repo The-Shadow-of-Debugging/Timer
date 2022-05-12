@@ -1,6 +1,6 @@
 <template>
   <div class="pie animate no-round" :style="{'--p':number}">
-    <div>
+    <div class="time">
       {{date.hours + ':' + date.minutes + ':' + date.seconds}}
     </div>
   </div>
@@ -27,6 +27,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.time {
+  @apply text-5xl;
+}
 @property --p{
   syntax: '<number>';
   inherits: true;
@@ -35,9 +38,9 @@ export default {
 
 .pie {
   --p:20;
-  --b:22px;
+  --b:30px;
   --c:#42AF0F;
-  --w:275px;
+  --w:380px;
 
   width: var(--w);
   aspect-ratio: 1;

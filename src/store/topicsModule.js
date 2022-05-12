@@ -34,7 +34,12 @@ export const topicsModule = {
         },
         // eslint-disable-next-line no-unused-vars
         obtainTopics({state, commit, getters}, id) {
-            commit('setTopics', {...getters.getTopics.find(topic => topic.id === id)}.themes)
+            if (typeof {...getters.getTopics.find(topic => topic.id === id)}.themes !== 'undefined') {
+                commit('setTopics', {...getters.getTopics.find(topic => topic.id === id)}.themes)
+            }
+            else {
+                commit('setTopics', [])
+            }
             console.log('obtainTopics', state.topics)
         },
         deleteTopic({state}, topic) {

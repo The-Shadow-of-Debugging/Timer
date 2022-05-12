@@ -66,6 +66,11 @@ export const projectsModule = {
       } finally {
         //commit('setLoading', false)
       }
+    },
+    addProject({state}, project) {
+      console.log('addProject', state.projects)
+      state.projects.push(project)
+      project
     }
   },
   namespaced: true
