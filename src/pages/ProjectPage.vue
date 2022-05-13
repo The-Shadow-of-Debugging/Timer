@@ -40,14 +40,14 @@ export default {
     },
     createTopic(topic) {
       //this.getTopic.push(topic)
-      this.addTopic(topic)
+      this.addTopic({topic:topic, id:this.$route.params.id})
       this.dialogVisible = false
     },
     removeTopic(topic) {
       //const gt = this.getTopic.filter(t => t.id !== topic.id).slice(0)
       //this.getTopic.length = 0
       //gt.forEach(topic => this.getTopic.push(topic))
-      this.deleteTopic(topic)
+      this.deleteTopic({topic:topic, id:this.$route.params.id})
     }
   },
   computed: {
@@ -58,8 +58,7 @@ export default {
       getTopics: 'topic/getTopics'
     }),
     getTopic() {
-      // eslint-disable-next-line vue/no-async-in-computed-properties
-       this.obtainTopics(+this.$route.params.id)
+       this.obtainTopics(this.$route.params.id)
        return this.topics
     }
   },
