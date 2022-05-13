@@ -1,6 +1,6 @@
 <template>
   <div class="TimerPage">
-    <MyTimer :topics="getTopic" :date="currentTime" :number="process" class="timer mx-auto"></MyTimer>
+    <MyTimer :date="currentTime" :number="process" class="timer mx-auto"></MyTimer>
     <div class="buttons">
       <PreviousButton @click="previousTimer" :disabled="disable"></PreviousButton>
       <StartButton class="next" v-if="!start" @click="startTimer"></StartButton>
@@ -10,15 +10,15 @@
     <div class="authors">
       <div class="authors__item" v-if="previous !== index">
         <h2>Previous</h2>
-        <div>{{topics[previous].title}}</div>
+        <div>{{checkPrevious()}}</div>
       </div>
       <div class="authors__item">
         <h2>Now</h2>
-        <div>{{topics[index].title}}</div>
+        <div>{{checkCurrent()}}</div>
       </div>
       <div class="authors__item" v-if="next !== index">
         <h2>Next</h2>
-        <div>{{topics[next].title}}</div>
+        <div>{{checkNext()}}</div>
       </div>
     </div>
   </div>
@@ -51,18 +51,16 @@ export default {
     }),
     ...mapActions({
       fetchTopics: 'topic/fetchTopics',
+      obtainTopics: 'topic/obtainTopics',
     }),
-    showDialog() {
-      this.dialogVisible = true
-    },
     startTimer() {
       this.start = true
-      const difTime = this.getTopic[this.index].end - this.getTopic[this.index].start
+      const difTime = this.topics[this.index].duration / 1000
       let seconds = 1
       this.stop = setInterval(() => {
-        if (this.getTopic[this.index].end - 1 === this.getTopic[this.index].start)
+        if (this.topics[this.index].duration === 0)
           clearInterval(this.stop)
-        this.getTopic[this.index].end -= 1
+        this.topics[this.index].duration -= 1000
         this.process = (100 -(seconds / difTime) * 100)
         seconds++
         },1000)
@@ -73,10 +71,10 @@ export default {
     },
     nextTimer() {
       this.process = 101
-      if (this.getTopic.length - 1 > this.index) {
+      if (this.topics.length - 1 > this.index) {
         this.previous = this.index
         this.index += 1
-        if (this.index !== this.getTopic.length - 1) {
+        if (this.index !== this.topics.length - 1) {
           this.next = this.index + 1
         }
       }
@@ -90,6 +88,44 @@ export default {
           this.previous = this.index - 1
         }
       }
+    },
+    checkPrevious() {
+      try {
+        // eslint-disable-next-line no-empty
+        if (this.topics[this.previous].title) {
+        }
+      }
+      catch (e) {
+        console.log('e', e)
+        return ''
+      }
+
+      return this.topics[this.previous].title
+    },
+    checkCurrent() {
+      try {
+        // eslint-disable-next-line no-empty
+        if (this.topics[this.index].title) {
+        }
+      }
+      catch (e) {
+        console.log('e', e)
+        return ''
+      }
+
+      return this.topics[this.index].title
+    },
+    checkNext: function () {
+      try {
+        // eslint-disable-next-line no-empty
+        if (this.topics[this.next]) {
+        }
+      } catch (e) {
+        console.log('e', e)
+        return ''
+      }
+
+      return this.topics[this.next].title
     }
   },
   computed: {
@@ -99,28 +135,34 @@ export default {
     ...mapGetters({
       getTopics: 'topic/getTopics'
     }),
-    getTopic(){
-      console.log('this.getTopics', this.topics)
-      return this.topics
-    },
     currentTime() {
-      if (this.index !== this.getTopic.length - 1) {
-        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        this.next = this.index + 1
+      let date
+      try {
+        date = new Date(this.topics[this.index].duration - 10800000)
+        if (this.index !== this.topics.length - 1) {
+          // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+          this.next = this.index + 1
+        }
+        if (0 >= this.topics[this.index].duration) {
+          this.stopTimer()
+          return {"hours": '00',
+            "minutes": '00',
+            "seconds": '00'}
+        }
       }
-      /* Вычитать 10800*/
-      if (this.getTopic[this.index].start >= this.getTopic[this.index].end) {
-        this.stopTimer()
-        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        this.process = 0
-        return {"hours": '00',
+      catch(e) {
+        console.log(e)
+        return {
+          "hours": '00',
           "minutes": '00',
-          "seconds": '00'}
+          "seconds": '00'
+        }
       }
-      const date = new Date((this.getTopic[this.index].end - this.getTopic[this.index].start - 10800) * 1000)
-      return {"hours": String(date.getHours()).length === 2 ? date.getHours() : '0' + date.getHours(),
-        "minutes": String(date.getMinutes()).length === 2 ? date.getMinutes() : '0' + date.getMinutes(),
-        "seconds": String(date.getSeconds()).length === 2 ? date.getSeconds() : '0' +date.getSeconds()}
+      return {
+        "hours": (String(date.getHours()).length === 2 ? date.getHours() : '0' + date.getHours()),
+        "minutes": (String(date.getMinutes()).length === 2 ? date.getMinutes() : '0' + date.getMinutes()),
+        "seconds": (String(date.getSeconds()).length === 2 ? date.getSeconds() : '0' + date.getSeconds())
+      }
     }
   },
   mounted(){

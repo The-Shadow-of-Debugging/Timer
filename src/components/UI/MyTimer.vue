@@ -10,10 +10,6 @@
 export default {
   name: 'MyTimer',
   props: {
-    topics: {
-      type: Array,
-      required: true
-    },
     date: {
       type: Object,
       required: true

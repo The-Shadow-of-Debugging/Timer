@@ -18,7 +18,6 @@ export const topicsModule = {
         }
     },
     actions: {
-        // eslint-disable-next-line no-unused-vars
         async fetchTopics({state, commit}) {
             try {
                 const response = await axios.get('http://localhost:3000/themes');
@@ -31,13 +30,13 @@ export const topicsModule = {
         },
         async addTopic({commit}, {topic, id}) {
             commit('ADD_TOPIC', topic)
-            console.log('id', id)
-            await axios.post(`http://localhost:3000/carts/${id}/themes`, topic)
+            await axios.post(`http://localhost:3000/projects/${id}/themes`, topic)
         },
         // eslint-disable-next-line no-unused-vars
         obtainTopics({state, commit, getters}, id) {
-            if (typeof getters.getTopics.filter(topic => topic.cartId === id) !== 'undefined') {
-                commit('setTopics', getters.getTopics.filter(topic => topic.cartId === id))
+            console.log('obtainTopics', getters.getTopics)
+            if (typeof getters.getTopics.filter(topic => topic.projectId === id) !== 'undefined') {
+                commit('setTopics', getters.getTopics.filter(topic => topic.projectId === id))
             }
             else {
                 commit('setTopics', [])
@@ -46,12 +45,12 @@ export const topicsModule = {
         },
         async deleteTopic({state}, {topic, id}) {
             console.log(`http://localhost:3000/carts/${id}/themes/${topic.id}`)
-            await axios.delete(`http://localhost:3000/carts/${id}/themes/${topic.id}`, topic)
-
+            await axios.delete(`http://localhost:3000/projects/${id}/themes/${topic.id}`, topic)
             const gt = state.topics.filter(t => t.id !== topic.id).slice(0)
             console.log('deleteTopic', gt)
             state.topics.length = 0
             gt.forEach(topic => state.topics.push(topic))
+            //console.log('deleteTopic', state.topics)
         },
     },
     namespaced: true
