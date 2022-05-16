@@ -1,6 +1,6 @@
 <template>
   <div class="MyInput">
-    <input class="input" :value="modelValue" @input="updateInput">
+    <input class="input" :value="modelValue" v-mask="mask" @input="updateInput">
   </div>
 </template>
 
@@ -8,7 +8,8 @@
 export default {
   name: 'MyInput',
   props: {
-    modelValue: [String, Number]
+    modelValue: [String, Number],
+    mask: {type: [String, Object], default: null}
   },
   methods: {
     updateInput(event) {

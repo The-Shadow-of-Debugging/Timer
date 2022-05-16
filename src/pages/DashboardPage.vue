@@ -7,7 +7,7 @@
     <ProjectList :projects="showSortedProjects"></ProjectList>
     <MyButton :title="'Add new project'" @click="showDialog"></MyButton>
     <TopicWindow v-model:show="dialogVisible">
-      <ProjectForm @create="createProject" :title="'project'" :left="false"></ProjectForm>
+      <ProjectForm @create="createProject" :title="'project'"></ProjectForm>
     </TopicWindow>
   </div>
 

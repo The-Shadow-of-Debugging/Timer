@@ -2,19 +2,15 @@
   <h1 class="TopicWindow__title">Add new topic</h1>
         <div class="TopicWindow__item TopicWindowItem">
           <label class="TopicWindowItem__title">Topic</label>
-          <MyInput class="TopicWindowItem__input" v-model="topic.title"></MyInput>
+          <MyInput class="TopicWindowItem__input"  v-model="topic.title"></MyInput>
         </div>
         <div class="TopicWindow__item TopicWindowItem">
           <label class="TopicWindowItem__title">Expected Start</label>
-          <MyInput class="TopicWindowItem__input" v-model="topic.start"></MyInput>
+          <MyInput :mask="'99:99:99'" inputmode="decimal" class="TopicWindowItem__input" v-model="topic.start"></MyInput>
         </div>
         <div class="TopicWindow__item TopicWindowItem">
-          <label class="TopicWindowItem__title">Expected End</label>
-          <MyInput class="TopicWindowItem__input" v-model="topic.end"></MyInput>
-        </div>
-        <div class="TopicWindow__item TopicWindowItem">
-          <label class="TopicWindowItem__title">Time Left</label>
-          <MyInput class="TopicWindowItem__input" v-model="topic.left"></MyInput>
+          <label class="TopicWindowItem__title">Duration</label>
+          <MyInput :mask="'9{*}'" class="TopicWindowItem__input" v-model="topic.duration"></MyInput>
         </div>
         <MyButton :title="'Create'" class="TopicWindow__btn" @click="createTopic"></MyButton>
 </template>
@@ -25,26 +21,34 @@ import MyInput from '@/components/UI/Input/MyInput'
 export default {
     name:"TopicForm",
     components: {MyButton, MyInput},
+    emits: ["create"],
     data() {
         return {
             topic: {
                 "title": "",
                 "start": "",
-                "end": "",
-                "left": ""
+                "duration": ""
             }
         }
     },
     methods: {
         createTopic() {
-            this.$emit('create', this.topic)
-            this.topic = {
-                "title": "",
-                "start": "",
-                "end": "",
-                "left": ""
+          this.getTimeFromStart(this.topic.start)
+          this.$emit('create', this.topic)
+          this.topic = {
+            "title": "",
+            "start": "",
+            "duration": ""
             }
-        }
+        },
+      getTimeFromStart(start) {
+        let date = start.split('')
+        // eslint-disable-next-line no-unused-vars
+        date = (+date[0]) * 100000 + (+date[1])* 10000 +
+            (+date[3]) * 1000 + (+date[4])* 100 +
+            (+date[6]) * 10 + (+date[7])
+        console.log('date', date)
+      }
     }
 }
 </script>
