@@ -27,7 +27,7 @@ export default {
             topic: {
                 "title": "",
                 "start": "",
-                "duration": ""
+                "duration": 0
             }
         }
     },
@@ -38,7 +38,7 @@ export default {
           this.topic = {
             "title": "",
             "start": "",
-            "duration": ""
+            "duration": 0
             }
         },
       getTimeFromStart(start) {

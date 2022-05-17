@@ -55,12 +55,12 @@ export default {
     }),
     startTimer() {
       this.start = true
-      const difTime = this.topics[this.index].duration / 1000
+      const difTime = this.topics[this.index].duration
       let seconds = 1
       this.stop = setInterval(() => {
         if (this.topics[this.index].duration === 0)
           clearInterval(this.stop)
-        this.topics[this.index].duration -= 1000
+        this.topics[this.index].duration -= 1
         this.process = (100 -(seconds / difTime) * 100)
         seconds++
         },1000)
@@ -136,9 +136,10 @@ export default {
       getTopics: 'topic/getTopics'
     }),
     currentTime() {
+      this.obtainTopics(this.$route.params.id)
       let date
       try {
-        date = new Date(this.topics[this.index].duration - 10800000)
+        date = new Date(this.topics[this.index].duration * 1000 - 10800000)
         if (this.index !== this.topics.length - 1) {
           // eslint-disable-next-line vue/no-side-effects-in-computed-properties
           this.next = this.index + 1

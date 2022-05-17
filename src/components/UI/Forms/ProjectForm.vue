@@ -6,11 +6,11 @@
         </div>
         <div class="TopicWindow__item TopicWindowItem">
           <label class="TopicWindowItem__title">Expected Start</label>
-          <MyInput class="TopicWindowItem__input" v-model="project.timeToStart"></MyInput>
+          <MyInput class="TopicWindowItem__input" v-model="project.timeToStart" :mask="'99:99:99'"></MyInput>
         </div>
         <div class="TopicWindow__item TopicWindowItem">
           <label class="TopicWindowItem__title">Expected End</label>
-          <MyInput class="TopicWindowItem__input" v-model="project.timeToEnd"></MyInput>
+          <MyInput class="TopicWindowItem__input" v-model="project.timeToEnd" :mask="'99:99:99'"></MyInput>
         </div>
         <MyButton :title="'Create'" class="TopicWindow__btn" @click="createProject"></MyButton>
 </template>
@@ -25,8 +25,8 @@ export default {
         return {
             project: {
                 "title": "",
-                "timeToStart": "",
-                "timeToEnd": "",
+                "timeToStart": "00:00:00",
+                "timeToEnd": "00:00:00",
                 "status": "notStarted",
             }
         }
@@ -36,8 +36,8 @@ export default {
             this.$emit('create', this.project)
             this.project = {
                 "title": "",
-                "timeToStart": "",
-                "timeToEnd": "",
+                "timeToStart": "00:00:00",
+                "timeToEnd": "00:00:00",
                 "status": "notStarted",
             }
         }
